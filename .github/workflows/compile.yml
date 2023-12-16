@@ -1,15 +1,8 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Build CI
 
-on:
-  push:
-    branches: [ "CI" ]
-  pull_request:
-    branches: [ "CI" ]
-
-
-  workflow_dispatch:
+on: [push]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
