@@ -11,12 +11,21 @@ jobs:
 
     steps:
     - name: Checkout repo
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         submodules: 'recursive'
-    - name: esp-idf build
+    - name: Build App and OS
       uses: espressif/esp-idf-ci-action@v1
       with:
         esp_idf_version: release-v5.1
         target: esp32c6
         path: '.'
+        
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: Firmware
+        path: |
+          /app/mtribiere/CoffeeInterceptor/build/bootloader/bootloader.bin
+          /app/mtribiere/CoffeeInterceptor/build/partition_table/partition-table.bin
+          /app/mtribiere/CoffeeInterceptor/build/uart_echo.bin
