@@ -26,6 +26,6 @@ jobs:
       with:
         name: Firmware
         path: |
-          /app/mtribiere/CoffeeInterceptor/build/bootloader/bootloader.bin
-          /app/mtribiere/CoffeeInterceptor/build/partition_table/partition-table.bin
-          /app/mtribiere/CoffeeInterceptor/build/uart_echo.bin
+          build/bootloader/bootloader.bin
+          build/partition_table/partition-table.bin
+          build/uart_echo.bin
